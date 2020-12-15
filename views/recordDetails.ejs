@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    
+    <main>
+
+        <section class="cards-contianer">
+            <% data.forEach(item=>{ %>
+                <h2>Covid19 statistics for <%= item.country%></h2>
+                <div class="card">
+                    
+                    <p>Total confirmed cases: <%= item.totalconfirmed%></p>
+                    <p>Total deaths cases: <%= item.totaldeaths%></p>
+                    <p>Total Recovered cases: <%= item.totalrecovered%></p>
+                    <p>Date: <%= item.date%></p>
+                    <form action="/deleteRecord?_method=delete" method="POST">
+                       
+                        <input type="hidden"name="id" value="<%= item.id%>">
+                        <button>DELETE</button>
+                    </form>
+                </div>
+    
+        <% })%>
+    
+        </section>
+    </main>
+
+
+
+</body>
+</html>

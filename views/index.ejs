@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/allCountries">All Countries</a>
+            <a href="/myRecords">My Records</a>
+        </nav>
+    </header>
+    <main>
+        <section class="statistics">
+            <h2>World Total Statistics</h2>
+            <div class="info">
+                <h3>Total Confirmed:<%=data.TotalConfirmed %></h3>
+            </div>
+            <div class="info">
+                <h3>Total Deaths:<%=data.TotalDeaths %></h3>
+            </div>
+            <div class="info">
+                <h3>Total Recoverd:<%=data.TotalRecovered %></h3>
+            </div>
+        </section>
+        <section class="form">
+            <h2>Get Statistics for a specific country</h2>
+            <form action="/countryResult" method="POST">
+
+                <input type="text" placeholder="Add Country Name" name="country">
+                <input type="date"name="fromDate">
+                <input type="date" name="toDate">
+                <button>SEARCH</button>
+
+            </form>
+        </section>
+
+    </main>
+    <footer></footer>
+</body>
+</html>

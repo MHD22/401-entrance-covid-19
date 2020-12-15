@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Records</title>
+</head>
+<body>
+
+    <section class="cards-contianer">
+        <%if( !data.length){%>
+            <h2>There is not any records yet..</h2>  
+       <% } %>
+
+        <%  data.forEach(item=>{ %>
+            
+
+            <div class="card">
+                <h3>Country:<%= item.country%></h3>
+                <p>Date: <%= item.date%></p>
+                <form action="/details/<%=item.id%>" method="POST">
+                    <input type="hidden"name="TotalConfirmed" value="<%= item.totalConfirmed%>">
+                    <input type="hidden"name="Country" value="<%= item.country%>">
+                    <input type="hidden"name="TotalDeaths" value="<%= item.totalDeaths%>">
+                    <input type="hidden"name="TotalRecovered" value="<%= item.totalRecovered%>">
+                    <input type="hidden"name="Date" value="<%= item.date%>">
+                    <button>SHOW DETAILS</button>
+                </form>
+            </div>
+
+    <% }) %>
+
+    </section>
+
+
+
+</body>
+</html>
